@@ -12,14 +12,14 @@ install
 
 .. code-block:: shell
 
-    pip install vital_statistics_jp
+    pip install vital-statistics-jp
 
 code example
 ============
 
 .. code-block:: python
 
-    from vital_statistics_jp import read_prompt
+    from vital-statistics-jp import read_prompt
 
     stat_df = read_prompt()
 
