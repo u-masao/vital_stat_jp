@@ -19,7 +19,7 @@ code example
 
 .. code-block:: python
 
-    from vital-statistics-jp import read_prompt
+    from vital_statistics_jp import read_prompt
 
     stat_df = read_prompt()
 
