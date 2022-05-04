@@ -1,8 +1,10 @@
 [tool.poetry]
 name = "vital_statistics_jp"
-version = "0.1.1"
+version = "0.1.2"
 description = "vital statistics downloader"
 authors = ["u-masao <4973920+u-masao@users.noreply.github.com>"]
+readme = "README.rst"
+repository = "https://github.com/u-masao/vital_statistics_jp"
 
 [tool.poetry.dependencies]
 python = "^3.8"
