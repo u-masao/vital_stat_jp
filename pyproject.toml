@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "vital_statistics_jp"
-version = "0.1.3"
+version = "0.1.4"
 description = "vital statistics downloader"
 authors = ["u-masao <4973920+u-masao@users.noreply.github.com>"]
 readme = "README.rst"
