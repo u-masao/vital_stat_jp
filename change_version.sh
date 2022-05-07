@@ -22,7 +22,7 @@ git diff --cached | cat
 git commit -m '[update] package version'
 git tag -a v${NEXT} -m 'new version'
 
-poetry bulid
+poetry build 
 
 echo git push
 echo git push origin v${NEXT}
