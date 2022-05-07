@@ -1,9 +1,9 @@
 #!/bin/bash -eux
 
-BUILD_NO=6
+CURRENT_BUILD_NO=6
 
-OLD=0\.1\.${BUILD_NO}
-NEW=0\.1\.`expr ${BUILD_NO} + 1`
+CURRENT=0\.1\.${CURRENT_BUILD_NO}
+NEXT=0\.1\.`expr ${CURRENT_BUILD_NO} + 1`
 
 cat <<EOF | while read FILE
 pyproject.toml
@@ -13,11 +13,17 @@ EOF
 
 do
     echo $FILE
-    sed -i "s/${OLD}/${NEW}/" $FILE
+    sed -i "s/${CURRENT}/${NEXT}/" $FILE
     git add $FILE
 done 
 
 git status
 git diff --cached | cat
-echo git commit '[update] package version'
-echo git tag -a v${NEW} -m 'new version'
+git commit -m '[update] package version'
+git tag -a v${NEXT} -m 'new version'
+
+poetry bulid
+
+echo git push
+echo git push origin v${NEXT}
+echo poetry publish
