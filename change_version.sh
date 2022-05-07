@@ -1,9 +1,12 @@
 #!/bin/bash -eux
 
-CURRENT_BUILD_NO=6
+CURRENT_BUILD_NO=`cat BUILD_NO`
+expr ${CURRENT_BUILD_NO} + 1 > BUILD_NO
 
 CURRENT=0\.1\.${CURRENT_BUILD_NO}
 NEXT=0\.1\.`expr ${CURRENT_BUILD_NO} + 1`
+
+echo version change $CURRENT to $NEXT
 
 cat <<EOF | while read FILE
 pyproject.toml
@@ -17,6 +20,7 @@ do
     git add $FILE
 done 
 
+git add BUILD_NO
 git status
 git diff --cached | cat
 git commit -m '[update] package version'
